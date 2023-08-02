@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SilverCarRental.Core\SilverCarRental.Core.csproj" />
+    <ProjectReference Include="..\SilverCarRental.Entities\SilverCarRental.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

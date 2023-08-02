@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverCarRental", "SilverCarRental\SilverCarRental.csproj", "{21645039-EF37-4E8B-9DA6-B913CFA3FE03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverCarRental", "SilverCarRental\SilverCarRental.csproj", "{21645039-EF37-4E8B-9DA6-B913CFA3FE03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{61A42F22-C91C-4BE2-AC88-07C60659E374}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{481BF8E6-0E93-4495-A75A-19CEAD88AA42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverCarRental.Entities", "SilverCarRental.Entities\SilverCarRental.Entities.csproj", "{A9DFB274-575E-4A5F-92F4-202D9ED03F4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverCarRental.Entities", "SilverCarRental.Entities\SilverCarRental.Entities.csproj", "{A9DFB274-575E-4A5F-92F4-202D9ED03F4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverCarRental.TempDatabase", "SilverCarRental.TempDatabase\SilverCarRental.TempDatabase.csproj", "{7CD4CF0F-551D-48C7-AF15-F590F6D7581C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverCarRental.TempDatabase", "SilverCarRental.TempDatabase\SilverCarRental.TempDatabase.csproj", "{7CD4CF0F-551D-48C7-AF15-F590F6D7581C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverCarRental.Core", "SilverCarRental.Core\SilverCarRental.Core.csproj", "{77228731-0735-4296-A612-29B59696B8E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{7CD4CF0F-551D-48C7-AF15-F590F6D7581C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CD4CF0F-551D-48C7-AF15-F590F6D7581C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CD4CF0F-551D-48C7-AF15-F590F6D7581C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77228731-0735-4296-A612-29B59696B8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77228731-0735-4296-A612-29B59696B8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77228731-0735-4296-A612-29B59696B8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77228731-0735-4296-A612-29B59696B8E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A9DFB274-575E-4A5F-92F4-202D9ED03F4A} = {61A42F22-C91C-4BE2-AC88-07C60659E374}
 		{7CD4CF0F-551D-48C7-AF15-F590F6D7581C} = {481BF8E6-0E93-4495-A75A-19CEAD88AA42}
+		{77228731-0735-4296-A612-29B59696B8E9} = {61A42F22-C91C-4BE2-AC88-07C60659E374}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36A009B6-8F01-4EC3-828A-2BA1C5585FD2}

@@ -88,6 +88,40 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "SilverCarRental.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SilverCarRental.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SilverCarRental.Core.dll": {}
+        }
+      },
+      "SilverCarRental.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SilverCarRental.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SilverCarRental.Entities.dll": {}
+        }
+      },
+      "SilverCarRental.TempDatabase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SilverCarRental.Core": "1.0.0",
+          "SilverCarRental.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SilverCarRental.TempDatabase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SilverCarRental.TempDatabase.dll": {}
+        }
       }
     }
   },
@@ -429,10 +463,28 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "SilverCarRental.Core/1.0.0": {
+      "type": "project",
+      "path": "../SilverCarRental.Core/SilverCarRental.Core.csproj",
+      "msbuildProject": "../SilverCarRental.Core/SilverCarRental.Core.csproj"
+    },
+    "SilverCarRental.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SilverCarRental.Entities/SilverCarRental.Entities.csproj",
+      "msbuildProject": "../SilverCarRental.Entities/SilverCarRental.Entities.csproj"
+    },
+    "SilverCarRental.TempDatabase/1.0.0": {
+      "type": "project",
+      "path": "../SilverCarRental.TempDatabase/SilverCarRental.TempDatabase.csproj",
+      "msbuildProject": "../SilverCarRental.TempDatabase/SilverCarRental.TempDatabase.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "SilverCarRental.Core >= 1.0.0",
+      "SilverCarRental.Entities >= 1.0.0",
+      "SilverCarRental.TempDatabase >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -463,7 +515,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Core\\SilverCarRental.Core.csproj": {
+              "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Core\\SilverCarRental.Core.csproj"
+            },
+            "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {
+              "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj"
+            },
+            "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.TempDatabase\\SilverCarRental.TempDatabase.csproj": {
+              "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.TempDatabase\\SilverCarRental.TempDatabase.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace SilverCarRental.Entities
 {
-    public class Manufaturer
+    public class Manufacturer
     {
         public int Id { get; set; }
         public string Make { get; set; }
+
+        public CarModel Model { get; set; }
 
     }
 }

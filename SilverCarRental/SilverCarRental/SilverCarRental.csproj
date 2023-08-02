@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SilverCarRental.Core\SilverCarRental.Core.csproj" />
+    <ProjectReference Include="..\SilverCarRental.Entities\SilverCarRental.Entities.csproj" />
+    <ProjectReference Include="..\SilverCarRental.TempDatabase\SilverCarRental.TempDatabase.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SilverCarRental.TempDatabase/1.0.0": {
+        "dependencies": {
+          "SilverCarRental.Core": "1.0.0",
+          "SilverCarRental.Entities": "1.0.0"
+        },
+        "runtime": {
+          "SilverCarRental.TempDatabase.dll": {}
+        }
+      },
+      "SilverCarRental.Core/1.0.0": {
+        "runtime": {
+          "SilverCarRental.Core.dll": {}
+        }
+      },
+      "SilverCarRental.Entities/1.0.0": {
+        "runtime": {
+          "SilverCarRental.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SilverCarRental.TempDatabase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SilverCarRental.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SilverCarRental.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
