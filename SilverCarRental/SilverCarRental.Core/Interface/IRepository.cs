@@ -8,7 +8,7 @@ namespace SilverCarRental.Core.Interface
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        IEnumerable<T> FetchAll();
         T GetById(int id);
         IEnumerable<T> GetByColor(string id);
         void Insert(T obj);
