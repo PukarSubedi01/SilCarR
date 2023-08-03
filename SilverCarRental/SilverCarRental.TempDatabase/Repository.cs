@@ -20,6 +20,7 @@ namespace SilverCarRental.TempDatabase
     //}
     public class CarRepository<T> : IRepository<Car>
     {
+
        
 
         public IEnumerable<Car> GetAll()
@@ -34,9 +35,16 @@ namespace SilverCarRental.TempDatabase
             return car;
         }
 
-        public void Insert(Car obj)
+        public IEnumerable<Car> GetByColor(string color)
         {
-            throw new NotImplementedException();
+            var listOfCars = SilverCarDatabase.GetCars();
+            var car = listOfCars.Where(x => x.Color.Trim().Equals(color, StringComparison.OrdinalIgnoreCase)).ToList<Car>();
+            return car;
+        }
+
+        public void Insert(Car car)
+        {
+            SilverCarDatabase.AddCar(car);
         }
 
         public void Save()
@@ -44,9 +52,9 @@ namespace SilverCarRental.TempDatabase
             throw new NotImplementedException();
         }
 
-        public void Update(Car obj)
+        public void Update(int id,Car car)
         {
-            throw new NotImplementedException();
+            SilverCarDatabase.UpdateCar(id,car);
         }
 
         public void Delete(int id)

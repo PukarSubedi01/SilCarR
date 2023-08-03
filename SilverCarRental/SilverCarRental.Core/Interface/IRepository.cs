@@ -10,8 +10,9 @@ namespace SilverCarRental.Core.Interface
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
+        IEnumerable<T> GetByColor(string id);
         void Insert(T obj);
-        void Update(T obj);
+        void Update(int id,T obj);
         void Delete(int id);
         void Save();
     }

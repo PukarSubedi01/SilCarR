@@ -4,9 +4,12 @@ namespace SilverCarRental.TempDatabase
 {
     public static class SilverCarDatabase
     {
+       private static List<Car> listOfCars = new List<Car>();
+    
+
         public static List<Car> GetCars()
         {
-            var listOfCars = new List<Car>
+/*            listOfCars = new List<Car>
             {
                 new Car {
                     Id = 1,
@@ -92,8 +95,33 @@ namespace SilverCarRental.TempDatabase
                             Model = "Camry"
                         }
                     }}
-            };
+            };*/
             return listOfCars;
+        }
+
+        public static void AddCar(Car car)
+        {
+            listOfCars.Add(car);
+        }
+
+        public static void DeleteCar(int id)
+        {
+
+          
+        }
+
+        public static void UpdateCar(int id, Car car) {
+            listOfCars.ForEach(x =>
+            {
+                if(x.Id == id) {
+                    x.Id = id;
+                    x.Color = car.Color;
+                    x.Year = car.Year;
+                    x.Make = car.Make;
+                    x.Mileage = car.Mileage;
+                }
+            });
+       
         }
     }
 }
