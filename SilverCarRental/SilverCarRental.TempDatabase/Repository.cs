@@ -23,7 +23,7 @@ namespace SilverCarRental.TempDatabase
 
        
 
-        public IEnumerable<Car> GetAll()
+        public IEnumerable<Car> FetchAll()
         {
             return SilverCarDatabase.GetCars();
         }

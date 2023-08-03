@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {}
+    "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {}
   },
   "projects": {
-    "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {
+    "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj",
+        "projectUniqueName": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj",
         "projectName": "SilverCarRental.Entities",
-        "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj",
+        "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj",
         "packagesPath": "C:\\Users\\pukar\\.nuget\\packages\\",
-        "outputPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\obj\\",
+        "outputPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pukar\\AppData\\Roaming\\NuGet\\NuGet.Config",

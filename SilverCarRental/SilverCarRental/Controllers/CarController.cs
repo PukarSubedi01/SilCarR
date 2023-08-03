@@ -19,7 +19,7 @@ namespace SilverCarRental.Controllers
         [HttpGet]
         public IActionResult GetAllCars()
         {
-            var cars = carRepository.GetAll();
+            var cars = carRepository.FetchAll();
             return Ok(cars);
         }
 

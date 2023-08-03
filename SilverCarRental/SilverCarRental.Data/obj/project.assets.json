@@ -3532,11 +3532,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\SilverCarRental.Data.csproj",
+      "projectUniqueName": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\SilverCarRental.Data.csproj",
       "projectName": "SilverCarRental.Data",
-      "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\SilverCarRental.Data.csproj",
+      "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\SilverCarRental.Data.csproj",
       "packagesPath": "C:\\Users\\pukar\\.nuget\\packages\\",
-      "outputPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\obj\\",
+      "outputPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pukar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3553,8 +3553,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {
-              "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj"
+            "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj": {
+              "projectPath": "D:\\silverbay\\SilverBayProjects\\carRentals\\SilCarBe\\SilCarR\\SilverCarRental\\SilverCarRental.Entities\\SilverCarRental.Entities.csproj"
             }
           }
         }
