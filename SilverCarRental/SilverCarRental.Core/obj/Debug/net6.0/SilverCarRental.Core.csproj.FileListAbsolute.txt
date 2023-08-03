@@ -1,0 +1,12 @@
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\bin\Debug\net6.0\SilverCarRental.Core.deps.json
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\bin\Debug\net6.0\SilverCarRental.Core.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\bin\Debug\net6.0\SilverCarRental.Core.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.csproj.AssemblyReference.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.AssemblyInfoInputs.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.AssemblyInfo.cs
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.csproj.CoreCompileInputs.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\refint\SilverCarRental.Core.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\SilverCarRental.Core.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.Core\obj\Debug\net6.0\ref\SilverCarRental.Core.dll

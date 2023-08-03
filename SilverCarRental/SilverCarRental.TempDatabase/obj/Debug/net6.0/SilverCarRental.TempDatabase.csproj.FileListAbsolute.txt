@@ -1,0 +1,17 @@
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.TempDatabase.deps.json
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.TempDatabase.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.TempDatabase.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.Core.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.Entities.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.Core.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\bin\Debug\net6.0\SilverCarRental.Entities.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.csproj.AssemblyReference.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.GeneratedMSBuildEditorConfig.editorconfig
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.AssemblyInfoInputs.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.AssemblyInfo.cs
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.csproj.CoreCompileInputs.cache
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.csproj.CopyComplete
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\refint\SilverCarRental.TempDatabase.dll
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\SilverCarRental.TempDatabase.pdb
+D:\silverbay\SilverBayProjects\carRentals\SilCarR\SilverCarRental\SilverCarRental.TempDatabase\obj\Debug\net6.0\ref\SilverCarRental.TempDatabase.dll
