@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 
-namespace SilverCarRental.Core.Interface
+namespace SilverCarRental.Data
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        IEnumerable<T> FetchAll();
-        T GetById(int id);
-        IEnumerable<T> GetByColor(string id);
-        void Insert(T obj);
-        void Update(int id,T obj);
-        void Delete(int id);
-        void Save();
+        void Delete(object id);
+        void Delete(TEntity entityToDelete);
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
+        TEntity GetByID(object id);
+        void Insert(TEntity entity);
+        void Update(TEntity entityToUpdate);
     }
 }

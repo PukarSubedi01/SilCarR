@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SilverCarRental.Data;
 
@@ -11,9 +12,11 @@ using SilverCarRental.Data;
 namespace SilverCarRental.Data.Migrations
 {
     [DbContext(typeof(SilverDataContext))]
-    partial class SilverDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230803193707_Create user entity")]
+    partial class Createuserentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

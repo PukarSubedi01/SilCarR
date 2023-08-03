@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using SilverCarRental.Core.Services;
 using SilverCarRental.Data;
+using SilverCarRental.Data.Repositories;
+using SilverCarRental.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<SilverDataContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("SilverCarRentalConnectionString")));
 
+builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddTransient(typeof(IRepository<Car>), typeof(CarRepository));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
