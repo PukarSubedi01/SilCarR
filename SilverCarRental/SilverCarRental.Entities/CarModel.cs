@@ -10,5 +10,6 @@ namespace SilverCarRental.Entities
     {
         public int Id { get; set; }
         public string Model { get; set; }
+        public Manufacturer Manufacturer { get; set; }
     }
 }
