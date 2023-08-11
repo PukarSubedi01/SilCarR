@@ -18,5 +18,13 @@ namespace SilverCarRental.Data
         public DbSet<CarModel> CarModel { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Car>()
+                .HasOne(c => c.Model)
+                .WithMany(c => c.Cars)
+                .HasForeignKey(c => c.ModelId);
+        }
     }
 }
