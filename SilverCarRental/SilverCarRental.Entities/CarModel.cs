@@ -14,6 +14,5 @@ namespace SilverCarRental.Entities
         public int ManufacturerId { get; set; }
         public Manufacturer Manufacturer { get; set; }
 
-        public virtual ICollection<Car> Cars { get; set; }
     }
 }

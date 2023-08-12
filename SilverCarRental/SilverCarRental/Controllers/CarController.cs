@@ -11,18 +11,15 @@ namespace SilverCarRental.Controllers
     public class CarController : ControllerBase
     {
         private readonly IRepository<Car> repository;
-        private readonly SilverDataContext context;
 
-        public CarController(IRepository<Car> repository, SilverDataContext context)
+        public CarController(IRepository<Car> repository)
         {
             this.repository = repository;
-            this.context = context;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllCar()
         {
-        
-            var cars =  await context.Car.ToListAsync();
+            var cars = await repository.Get(includeProperties: "Model.Manufacturer");
             return Ok(cars);
         }
 

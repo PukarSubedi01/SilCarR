@@ -12,19 +12,13 @@ namespace SilverCarRental.Data
     {
         public SilverDataContext(DbContextOptions<SilverDataContext> dbContextOptions) : base(dbContextOptions)
         {
+
         }
-        public DbSet<Car> Car { get; set; }
-        public DbSet<Manufacturer> Manufacturer { get; set; }
-        public DbSet<CarModel> CarModel { get; set; }
+        public  DbSet<Car> Car { get; set; }
+        public  DbSet<Manufacturer> Manufacturer { get; set; }
+        public  DbSet<CarModel> CarModel { get; set; }
 
         public DbSet<User> User { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Car>()
-                .HasOne(c => c.Model)
-                .WithMany(c => c.Cars)
-                .HasForeignKey(c => c.ModelId);
-        }
     }
 }

@@ -9,7 +9,7 @@
         public int Mileage { get; set; }    
         public string Color { get; set; }
 
-        public virtual CarModel Model { get; set; }
+        public  CarModel Model { get; set; }
 
     }
 }
