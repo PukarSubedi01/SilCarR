@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SilverCarRental.Core.Interface;
+using Microsoft.EntityFrameworkCore;
+using SilverCarRental.Data;
 using SilverCarRental.Entities;
-using SilverCarRental.TempDatabase;
 
 namespace SilverCarRental.Controllers
 {
@@ -10,47 +10,31 @@ namespace SilverCarRental.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        IRepository<Car> carRepository;
-        public CarController()
-        {
-            this.carRepository = new CarRepository<Car>();
-        }
+        private readonly IRepository<Car> repository;
 
-        [HttpGet]
-        public IActionResult GetAllCars()
+        public CarController(IRepository<Car> repository)
         {
-            var cars = carRepository.FetchAll();
-            return Ok(cars);
+            this.repository = repository;
         }
-
         [HttpGet]
-        [Route("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetAllCar()
         {
-            var car = carRepository.GetById(id);
-            return Ok(car);
-        }
-
-        [HttpGet]
-        [Route("{color}")]
-        public IActionResult GetByColor(string color)
-        {   
-            var cars = carRepository.GetByColor(color);
+            var cars = await repository.Get(includeProperties: "Model.Manufacturer");
             return Ok(cars);
         }
 
         [HttpPost]
-        public IActionResult AddCar([FromBody] Car car)
+        public  IActionResult SaveCar([FromBody] CarRequestDTO carRequestDTO)
         {
-            carRepository.Insert(car);
-            return Ok(car);
-        }
+            var car = new Car()
+            {
+                Color = carRequestDTO.Color,
+                Mileage = carRequestDTO.Mileage,
+                ModelId = carRequestDTO.ModelId,
+                Year = carRequestDTO.Year
 
-        [HttpPut]
-        [Route("{id}")]
-        public IActionResult UpdateCar(int id, [FromBody] Car car)
-        {
-            carRepository.Update(id, car);
+            };
+             repository.Insert(car);
             return Ok(car);
         }
     }

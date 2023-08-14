@@ -1,4 +1,5 @@
 ﻿using SilverCarRental.Core.Interface;
+using SilverCarRental.Data;
 using SilverCarRental.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,49 +19,11 @@ namespace SilverCarRental.TempDatabase
     //    void Delete(int id);
     //    void Save();
     //}
-    public class CarRepository<T> : IRepository<Car>
+    public class CarRepository<T> : IRepository<Car>, Repos
     {
 
        
 
-        public IEnumerable<Car> FetchAll()
-        {
-            return SilverCarDatabase.GetCars();
-        }
-
-        public Car GetById(int id)
-        {
-            var listOfCars = SilverCarDatabase.GetCars();
-            var car = listOfCars.Where(x => x.Id == id).First();
-            return car;
-        }
-
-        public IEnumerable<Car> GetByColor(string color)
-        {
-            var listOfCars = SilverCarDatabase.GetCars();
-            var car = listOfCars.Where(x => x.Color.Trim().Equals(color, StringComparison.OrdinalIgnoreCase)).ToList<Car>();
-            return car;
-        }
-
-        public void Insert(Car car)
-        {
-            SilverCarDatabase.AddCar(car);
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(int id,Car car)
-        {
-            SilverCarDatabase.UpdateCar(id,car);
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
