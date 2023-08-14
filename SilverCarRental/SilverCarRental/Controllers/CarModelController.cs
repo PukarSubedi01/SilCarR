@@ -19,7 +19,7 @@ namespace SilverCarRental.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCarModels()
         {
-            var carModels = await repository.Get();
+            var carModels = await repository.Get(includeProperties: "Manufacturer");
             return Ok(carModels);
         }
     }
