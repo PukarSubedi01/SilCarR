@@ -53,31 +53,54 @@ namespace SilverCarRental.Data
             return dbSet.Find(id);
         }
 
-        public virtual void Insert(TEntity entity)
+        public virtual async void Insert(TEntity entity)
         {
             dbSet.Add(entity);
-            context.SaveChanges();
+            context.SaveChangesAsync();
         }
 
-        public virtual void Delete(object id)
+        /*public virtual void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
-        }
+        }*/
 
-        public virtual void Delete(TEntity entityToDelete)
+        public bool Delete(object id)
+        {
+            TEntity entityToDelete = context.Set<TEntity>().Find(id);
+            if (entityToDelete != null)
+            {
+                context.Set<TEntity>().Remove(entityToDelete);
+                context.SaveChanges();
+                return true; // Deletion was successful
+            }
+            return false; // Deletion failed (entity not found)
+        }
+        /*public virtual void Delete(TEntity entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
             {
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
-        }
+        }*/
 
-        public virtual void Update(TEntity entityToUpdate)
+        /* public virtual void Update(TEntity entityToUpdate)
+         {
+             var existingEntity = dbSet.Find(entityToUpdate.id);
+             if (existingEntity != null)
+             {
+                 context.Entry(existingEntity).CurrentValues.SetValues(entityToUpdate);
+                 context.SaveChanges();
+             }
+         }*/
+
+        public virtual void Update(TEntity id)
         {
-            dbSet.Attach(entityToUpdate);
-            context.Entry(entityToUpdate).State = EntityState.Modified;
+            dbSet.Attach(id);
+            context.Entry(id).State = EntityState.Modified;
+            context.SaveChanges();
+
         }
     }
 }
