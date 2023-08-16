@@ -9,6 +9,8 @@
         public int Mileage { get; set; }    
         public string Color { get; set; }
 
+
+
         public  CarModel Model { get; set; }
 
     }
