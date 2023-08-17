@@ -6,6 +6,7 @@
         public int CarId { get; set; }
         public int UserId { get; set; }
         public double Rate { get; set; }
+        public DateTime BookedDate { get; set; }
         public DateTime ReturnDate { get; set; }
 
         public string Insurance { get; set; }
