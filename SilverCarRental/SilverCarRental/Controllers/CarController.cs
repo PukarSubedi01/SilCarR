@@ -17,14 +17,32 @@ namespace SilverCarRental.Controllers
             this.repository = repository;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllCar()
+        public async Task<IActionResult> GetAllCar(
+            [FromQuery] string? filterByMake = null,
+            [FromQuery] string? filterByModel = null
+            )
         {
-            var cars = await repository.Get(includeProperties: "Model.Manufacturer");
+            IEnumerable<Car> cars;
+            if (filterByMake != null && filterByModel != null)
+            {
+
+                cars = await repository.Get(includeProperties: "Model.Manufacturer", filter: car => car.Model.Manufacturer.Make == filterByMake && car.Model.Model == filterByModel);
+            }
+            else if (filterByModel != null)
+            {
+                cars = await repository.Get(includeProperties: "Model.Manufacturer", filter: car => car.Model.Model == filterByModel);
+            }
+            else if (filterByMake != null)
+            {
+                cars = await repository.Get(includeProperties: "Model.Manufacturer", filter: car => car.Model.Manufacturer.Make == filterByMake);
+            }
+            else
+                cars = await repository.Get(includeProperties: "Model.Manufacturer");
             return Ok(cars);
         }
 
         [HttpPost]
-        public  IActionResult SaveCar([FromBody] CarRequestDTO carRequestDTO)
+        public IActionResult SaveCar([FromBody] CarRequestDTO carRequestDTO)
         {
             var car = new Car()
             {
@@ -34,8 +52,43 @@ namespace SilverCarRental.Controllers
                 Year = carRequestDTO.Year
 
             };
-             repository.Insert(car);
+            repository.Insert(car);
             return Ok(car);
         }
+        [HttpPut("UpdateCar/{id}")]
+        public IActionResult UpdateCar(int id, [FromBody] CarRequestDTO carRequestDTO)
+        {
+            var car = repository.GetByID(id);
+
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+
+            car.Color = carRequestDTO.Color;
+            car.Mileage = carRequestDTO.Mileage;
+            car.ModelId = carRequestDTO.ModelId;
+            car.Year = carRequestDTO.Year;
+
+            repository.Update(car);
+
+            return Ok(car);
+        }
+        [HttpDelete("Delete/{id}")]
+        public IActionResult DeleteCar(int id)
+        {
+            var entityToDelete = repository.GetByID(id);
+            if (entityToDelete == null)
+            {
+                return NotFound();
+            }
+
+            repository.Delete(entityToDelete);
+            return Ok(entityToDelete);
+
+
+        }
+
     }
 }
