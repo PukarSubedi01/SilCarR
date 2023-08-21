@@ -18,7 +18,7 @@ namespace SilverCarRental.Data
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
-        }
+        }   
 
         public async virtual Task<IEnumerable<TEntity>> Get(
             Expression<Func<TEntity, bool>> filter = null,
@@ -31,12 +31,9 @@ namespace SilverCarRental.Data
             {
                 query = query.Where(filter);
             }
-
-            foreach (var includeProperty in includeProperties.Split
-                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                query = query.Include(includeProperty);
-            }
+                           
+            query = QueryAfterInclude(query, includeProperties);
+            
 
             if (orderBy != null)
             {
@@ -48,36 +45,71 @@ namespace SilverCarRental.Data
             }
         }
 
-        public virtual TEntity GetByID(object id)
-        {
-            return dbSet.Find(id);
-        }
 
-        public virtual void Insert(TEntity entity)
+        /* public async virtual Task<TEntity> GetByID(object id,
+              string includeProperties = "") 
+         {
+             ParameterExpression parameter = Expression.Parameter(typeof(TEntity), "x");
+             Expression idProperty = Expression.Property(parameter, "Id"); 
+
+             ConstantExpression idValue = Expression.Constant(id);
+
+             BinaryExpression equalExpression = Expression.Equal(idProperty, idValue);
+
+             Expression<Func<TEntity, bool>> filterExpression = Expression.Lambda<Func<TEntity, bool>>(equalExpression, parameter);
+             IQueryable<TEntity> query = dbSet;
+             query = QueryAfterInclude(query, includeProperties);
+             return await query.FirstOrDefaultAsync(filterExpression);
+         }*/
+        public async Task<TEntity> GetByID(Expression<Func<TEntity, bool>> idFilter, string includeProperties = "")
+        {
+            IQueryable<TEntity> query = dbSet;
+            query = QueryAfterInclude(query, includeProperties);
+            return await query.FirstOrDefaultAsync(idFilter);
+        }
+        public async virtual Task<TEntity> Insert(TEntity entity)
         {
             dbSet.Add(entity);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
+            return entity;
         }
 
-        public virtual void Delete(object id)
+        public async virtual Task<TEntity> Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
-            Delete(entityToDelete);
+            await Delete(entityToDelete);
+            return entityToDelete;
         }
 
-        public virtual void Delete(TEntity entityToDelete)
+        public async virtual Task<TEntity> Delete(TEntity entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
             {
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
+            await context.SaveChangesAsync();
+            return entityToDelete;
         }
 
-        public virtual void Update(TEntity entityToUpdate)
+        public async virtual Task<TEntity> Update(TEntity entityToUpdate)
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+            return entityToUpdate;
         }
+
+        private IQueryable<TEntity> QueryAfterInclude(IQueryable<TEntity> query, string includeProperties = "")
+        {
+            foreach (var includeProperty in includeProperties.Split
+               (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+            return query;
+        }
+
+       
     }
 }
