@@ -151,5 +151,6 @@ _resharper.*
 .vsconfig
 
 # Ignore build output
-/bin/
-/obj/
+bin
+obj
+Migrations
