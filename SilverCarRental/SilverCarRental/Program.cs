@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SilverCarRental.Core.Interface;
 using SilverCarRental.Core.Services;
 using SilverCarRental.Data;
 using SilverCarRental.Data.Repositories;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<SilverDataContext>
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddTransient(typeof(IRepository<Car>), typeof(CarRepository));
+builder.Services.AddTransient(typeof(ICarRepository), typeof(CarRepository));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

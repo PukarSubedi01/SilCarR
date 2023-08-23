@@ -17,10 +17,10 @@ namespace SilverCarRental.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] User user)
+        public async Task<IActionResult> Create([FromBody] User user)
         {
-            userRepository.Insert(user);
-            return Ok(user);
+          var createdUser =  await userRepository.Insert(user);
+            return Ok(createdUser);
         }
     }
 }

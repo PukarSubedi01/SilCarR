@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SilverCarRental.Data;
 using SilverCarRental.DTOs;
 using SilverCarRental.Entities;
+using System.Linq.Expressions;
 
 namespace SilverCarRental.Controllers
 {
@@ -23,6 +24,8 @@ namespace SilverCarRental.Controllers
             return Ok(await repository.Get(includeProperties: "User,Car.Model.Manufacturer"));
         }
 
+        
+
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetRentalCarById(int id)
@@ -38,9 +41,9 @@ namespace SilverCarRental.Controllers
             {
                 CarId = rentalCarDTO.CarId,
                 Insurance = rentalCarDTO.Insurance,
-                IsAvailable = rentalCarDTO.IsAvailable,
                 Location = rentalCarDTO.Location,
                 ReturnDate = rentalCarDTO.ReturnDate,
+                BookDate  = rentalCarDTO.BookDate,
                 UserId = rentalCarDTO.UserId,
                 Rate = rentalCarDTO.Rate,
             };

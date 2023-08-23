@@ -12,6 +12,7 @@ namespace SilverCarRental.Entities
         public string Year { get; set; }
         public int Mileage { get; set; }
         public string Color { get; set; }
+        public decimal Rate { get; set; }
 
     }
 }
