@@ -10,6 +10,5 @@ namespace SilverCarRental.DTOs
         public int UserId { get; set; }
         public string Insurance { get; set; }
         public string Location { get; set; }
-        public bool IsAvailable { get; set; }
     }
 }

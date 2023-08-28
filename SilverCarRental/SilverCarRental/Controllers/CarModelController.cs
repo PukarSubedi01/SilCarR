@@ -25,16 +25,15 @@ namespace SilverCarRental.Controllers
         }
 
         [HttpPost]
-        public IActionResult SaveCarModel([FromBody] CarModelRequestDTO carModelRequestDTO)
+        public async Task<IActionResult> SaveCarModel([FromBody] CarModelRequestDTO carModelRequestDTO)
         {
 
             var carModel = new CarModel()
             {
-                Id = carModelRequestDTO.Id,
                 Model = carModelRequestDTO.Model,
                 ManufacturerId = carModelRequestDTO.ManufacturerId,
             };
-            repository.Insert(carModel);
+            await repository.Insert(carModel);
             return Ok(carModel);
         }
 
@@ -44,7 +43,7 @@ namespace SilverCarRental.Controllers
         {
             try
             {
-                var existingCarModel = repository.GetByID(id);
+                var existingCarModel = await repository.GetByID(car => car.Id == id);
 
                 if (existingCarModel == null)
                 {
@@ -52,7 +51,7 @@ namespace SilverCarRental.Controllers
                 }
                 existingCarModel.Model = updatedCarModel.Model;
 
-                repository.Update(existingCarModel);
+                var updatedCar = await repository.Update(existingCarModel);
                 return Ok(existingCarModel);
             }
             catch (Exception ex)
@@ -65,24 +64,11 @@ namespace SilverCarRental.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            try
-            {
-                bool deletionSuccessful = repository.Delete(id);
-
-                if (deletionSuccessful)
-                {
-                    return NoContent();
-                }
-                else
-                {
-                    return BadRequest("Deletion failed or item not found.");
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "An error occurred while processing your request.");
-            }
+         
+                var deletedModel = await repository.Delete(id);
+            return Ok(deletedModel);
+            
+         
         }
     }
 }

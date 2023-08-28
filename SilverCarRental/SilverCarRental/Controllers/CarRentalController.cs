@@ -38,11 +38,9 @@ namespace SilverCarRental.Controllers
             {
                 CarId = rentalCarDTO.CarId,
                 Insurance = rentalCarDTO.Insurance,
-                IsAvailable = rentalCarDTO.IsAvailable,
                 Location = rentalCarDTO.Location,
                 ReturnDate = rentalCarDTO.ReturnDate,
                 UserId = rentalCarDTO.UserId,
-                Rate = rentalCarDTO.Rate,
             };
 
             await repository.Insert(rentalCar);

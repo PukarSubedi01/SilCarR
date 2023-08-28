@@ -20,7 +20,6 @@ namespace SilverCarRental.Data
         public DbSet<User> User { get; set; }
         public DbSet<RentalCar> RentalCar { get; set; }
 
-        public DbSet<RentalCar> RentalCar { get; set; }
 
     }
 }

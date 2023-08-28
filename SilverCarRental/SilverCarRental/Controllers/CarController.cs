@@ -49,43 +49,38 @@ namespace SilverCarRental.Controllers
                 Color = carRequestDTO.Color,
                 Mileage = carRequestDTO.Mileage,
                 ModelId = carRequestDTO.ModelId,
-                Year = carRequestDTO.Year
+                Year = carRequestDTO.Year,
+                Rate = carRequestDTO.Rate,
 
             };
             repository.Insert(car);
             return Ok(car);
         }
         [HttpPut("UpdateCar/{id}")]
-        public IActionResult UpdateCar(int id, [FromBody] CarRequestDTO carRequestDTO)
+        public async Task<IActionResult> UpdateCar(int id, [FromBody] CarRequestDTO carRequestDTO)
         {
-            var car = repository.GetByID(id);
+            var car = await repository.GetByID(car => car.Id == id);
 
             if (car == null)
             {
                 return NotFound();
             }
 
+           var updatedCar = await repository.Update(car);
 
-            car.Color = carRequestDTO.Color;
-            car.Mileage = carRequestDTO.Mileage;
-            car.ModelId = carRequestDTO.ModelId;
-            car.Year = carRequestDTO.Year;
-
-            repository.Update(car);
-
-            return Ok(car);
+            return Ok(updatedCar);
         }
         [HttpDelete("Delete/{id}")]
-        public IActionResult DeleteCar(int id)
+        public async Task<IActionResult> DeleteCar(int id)
         {
-            var entityToDelete = repository.GetByID(id);
+            var entityToDelete = await repository.GetByID(car => car.Id == id);
             if (entityToDelete == null)
             {
                 return NotFound();
             }
 
-            repository.Delete(entityToDelete);
-            return Ok(entityToDelete);
+            var deletedEntity = await repository.Delete(entityToDelete);
+            return Ok(deletedEntity);
 
 
         }

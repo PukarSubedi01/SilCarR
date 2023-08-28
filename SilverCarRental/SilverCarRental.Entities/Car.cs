@@ -8,6 +8,7 @@
         public string Year { get; set; }
         public int Mileage { get; set; }    
         public string Color { get; set; }
+        public decimal Rate { get; set; }
 
         public  CarModel Model { get; set; }
 

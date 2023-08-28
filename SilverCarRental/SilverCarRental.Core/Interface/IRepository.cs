@@ -6,7 +6,10 @@ namespace SilverCarRental.Data
     {
         Task<TEntity> Delete(object id);
         Task<TEntity> Delete(TEntity entityToDelete);
-       Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
+       Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> 
+           filter = null,Func<IQueryable<TEntity>,
+           IOrderedQueryable<TEntity>> orderBy = null, 
+           string includeProperties = "");
         Task<TEntity> GetByID(Expression<Func<TEntity, bool>> idFilter = null, string includeProperties = "");
         //Task<TEntity> GetByID(object id, string includeProperties = "");
         Task<TEntity> Insert(TEntity entity);

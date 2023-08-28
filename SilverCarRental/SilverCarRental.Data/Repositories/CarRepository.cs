@@ -30,7 +30,7 @@ namespace SilverCarRental.Data.Repositories
                         Id = rc.Id,
                         BookedDate = rc.BookedDate,
                         ReturnDate = rc.ReturnDate,
-                        Insurance = rc.insurance,
+                        Insurance = rc.Insurance,
                         Location = rc.Location,
                         Manufacturuer = man.Make,
                         Model = cm.Model
