@@ -36,7 +36,7 @@ public class ManufactureController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateManufacturer(long id, Manufacturer manufacturer)
+    public async Task<IActionResult> UpdateManufacturer(long id, Manufacturer manufacturer)
     {
         if (manufacturer == null || id != manufacturer.Id)
         {
@@ -44,21 +44,19 @@ public class ManufactureController : ControllerBase
         }
 
          _repository.Update(manufacturer);
-         _repository.Save();
          return NoContent();
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeleteManufacturer(int id)
+    public async Task<IActionResult> DeleteManufacturer(int id)
         {
-        var manufacturer =  _repository.GetByID(id);
+        var manufacturer = await  _repository.GetByID(manu => manu.Id == id);
         if (manufacturer == null)
         {
             return NotFound();
         }
 
-        _repository.Delete(manufacturer);
-        _repository.Save();
+        await _repository.Delete(manufacturer);
         return NoContent();
     }
 }
