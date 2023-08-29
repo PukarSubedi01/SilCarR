@@ -9,17 +9,17 @@ namespace SilverCarRental.Controllers
     [ApiController]
     public class CarModelController : ControllerBase
     {
-        private readonly IRepository<CarModel> repository;
+        private readonly IRepository<CarModel> _repository;
 
         public CarModelController(IRepository<CarModel> repository)
         {
-            this.repository = repository;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllCarModels()
         {
-            var carModels = await repository.Get(includeProperties: "Manufacturer");
+            var carModels = await _repository.Get(includeProperties: "Manufacturer");
             return Ok(carModels);
         }
     }

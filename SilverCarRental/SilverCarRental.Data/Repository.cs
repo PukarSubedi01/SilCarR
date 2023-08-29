@@ -79,5 +79,10 @@ namespace SilverCarRental.Data
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
+
+        public void Save()
+        {
+            context.SaveChanges();
+        }
     }
 }
